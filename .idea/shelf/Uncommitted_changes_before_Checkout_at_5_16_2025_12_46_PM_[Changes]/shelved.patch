@@ -1,0 +1,701 @@
+Index: src/main/webapp/Course/css/register.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/* Base Styles */\r\n:root {\r\n    --primary-color: #2c3e50;\r\n    --secondary-color: #3498db;\r\n    --accent-color: #e74c3c;\r\n    --light-gray: #f5f5f5;\r\n    --medium-gray: #e0e0e0;\r\n    --dark-gray: #333;\r\n    --success-color: #27ae60;\r\n}\r\n\r\nbody {\r\n    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\r\n    background-color: var(--light-gray);\r\n    color: var(--dark-gray);\r\n    line-height: 1.6;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\n/* Registration Container */\r\n.registration-container {\r\n    max-width: 800px;\r\n    margin: 2rem auto;\r\n    background: white;\r\n    border-radius: 10px;\r\n    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);\r\n    overflow: hidden;\r\n}\r\n\r\n.registration-header {\r\n    background-color: var(--primary-color);\r\n    color: white;\r\n    padding: 2rem;\r\n    text-align: center;\r\n}\r\n\r\n.registration-header h1 {\r\n    margin: 0;\r\n    font-size: 2rem;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    gap: 0.5rem;\r\n}\r\n\r\n.registration-header p {\r\n    margin: 0.5rem 0 0;\r\n    opacity: 0.9;\r\n}\r\n\r\n/* Form Styles */\r\n.registration-form {\r\n    padding: 2rem;\r\n}\r\n\r\nfieldset {\r\n    border: 1px solid var(--medium-gray);\r\n    border-radius: 8px;\r\n    padding: 1.5rem;\r\n    margin-bottom: 1.5rem;\r\n}\r\n\r\nlegend {\r\n    padding: 0 0.5rem;\r\n    font-weight: 600;\r\n    color: var(--primary-color);\r\n    font-size: 1.1rem;\r\n}\r\n\r\n.form-group {\r\n    margin-bottom: 1.2rem;\r\n}\r\n\r\n.form-row {\r\n    display: flex;\r\n    gap: 1rem;\r\n}\r\n\r\n.form-row .form-group {\r\n    flex: 1;\r\n}\r\n\r\nlabel {\r\n    display: block;\r\n    margin-bottom: 0.5rem;\r\n    font-weight: 500;\r\n}\r\n\r\ninput[type=\"text\"],\r\ninput[type=\"email\"],\r\ninput[type=\"tel\"],\r\ninput[type=\"date\"],\r\nselect,\r\ntextarea {\r\n    width: 100%;\r\n    padding: 0.8rem;\r\n    border: 1px solid var(--medium-gray);\r\n    border-radius: 4px;\r\n    font-size: 1rem;\r\n    transition: border-color 0.3s;\r\n}\r\n\r\ninput:focus,\r\nselect:focus,\r\ntextarea:focus {\r\n    outline: none;\r\n    border-color: var(--secondary-color);\r\n    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);\r\n}\r\n\r\ntextarea {\r\n    resize: vertical;\r\n    min-height: 80px;\r\n}\r\n\r\n/* Course Display */\r\n.course-display {\r\n    padding: 0.8rem;\r\n    background-color: var(--light-gray);\r\n    border-radius: 4px;\r\n    border: 1px dashed var(--medium-gray);\r\n    font-weight: 500;\r\n}\r\n\r\n/* Checkbox Styles */\r\n.checkbox-group {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 0.5rem;\r\n}\r\n\r\n.checkbox-group input[type=\"checkbox\"] {\r\n    width: auto;\r\n}\r\n\r\n.terms-group {\r\n    margin: 1.5rem 0;\r\n}\r\n\r\n.terms-group a {\r\n    color: var(--secondary-color);\r\n    text-decoration: none;\r\n}\r\n\r\n.terms-group a:hover {\r\n    text-decoration: underline;\r\n}\r\n\r\n/* Button Styles */\r\n.form-actions {\r\n    display: flex;\r\n    gap: 1rem;\r\n    justify-content: flex-end;\r\n}\r\n\r\n.submit-btn {\r\n    background-color: var(--secondary-color);\r\n    color: white;\r\n    border: none;\r\n    padding: 0.8rem 1.5rem;\r\n    border-radius: 4px;\r\n    font-size: 1rem;\r\n    font-weight: 500;\r\n    cursor: pointer;\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 0.5rem;\r\n    transition: background-color 0.3s;\r\n}\r\n\r\n.submit-btn:hover {\r\n    background-color: #2980b9;\r\n}\r\n\r\n.cancel-btn {\r\n    background-color: white;\r\n    color: var(--dark-gray);\r\n    border: 1px solid var(--medium-gray);\r\n    padding: 0.8rem 1.5rem;\r\n    border-radius: 4px;\r\n    font-size: 1rem;\r\n    font-weight: 500;\r\n    cursor: pointer;\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 0.5rem;\r\n    text-decoration: none;\r\n    transition: all 0.3s;\r\n}\r\n\r\n.cancel-btn:hover {\r\n    background-color: var(--light-gray);\r\n}\r\n\r\n/* Error Handling */\r\n.error-message {\r\n    color: var(--accent-color);\r\n    font-size: 0.8rem;\r\n    margin-top: 0.3rem;\r\n    display: block;\r\n    min-height: 1rem;\r\n}\r\n\r\ninput:invalid, select:invalid {\r\n    border-color: #ffdddd;\r\n}\r\n\r\n/* Success Modal */\r\n.modal {\r\n    display: none;\r\n    position: fixed;\r\n    z-index: 1000;\r\n    left: 0;\r\n    top: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    background-color: rgba(0, 0, 0, 0.5);\r\n    animation: fadeIn 0.3s;\r\n}\r\n\r\n.modal-content {\r\n    background-color: white;\r\n    margin: 10% auto;\r\n    padding: 2rem;\r\n    border-radius: 8px;\r\n    max-width: 500px;\r\n    text-align: center;\r\n    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);\r\n}\r\n\r\n.success-icon {\r\n    color: var(--success-color);\r\n    font-size: 3rem;\r\n    margin-bottom: 1rem;\r\n}\r\n\r\n.modal-close-btn {\r\n    background-color: var(--secondary-color);\r\n    color: white;\r\n    border: none;\r\n    padding: 0.8rem 1.5rem;\r\n    border-radius: 4px;\r\n    font-size: 1rem;\r\n    cursor: pointer;\r\n    margin-top: 1rem;\r\n}\r\n\r\n/* Responsive Design */\r\n@media (max-width: 768px) {\r\n    .form-row {\r\n        flex-direction: column;\r\n        gap: 0;\r\n    }\r\n\r\n    .registration-container {\r\n        margin: 0;\r\n        border-radius: 0;\r\n    }\r\n\r\n    .modal-content {\r\n        margin: 20% auto;\r\n        width: 90%;\r\n    }\r\n}\r\n\r\n@keyframes fadeIn {\r\n    from { opacity: 0; }\r\n    to { opacity: 1; }\r\n}\r\n/* Add to your existing CSS */\r\nselect {\r\n    appearance: none;\r\n    -webkit-appearance: none;\r\n    -moz-appearance: none;\r\n    background-image: url(\"data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23333'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e\");\r\n    background-repeat: no-repeat;\r\n    background-position: right 0.8rem center;\r\n    background-size: 1rem;\r\n    padding-right: 2.5rem;\r\n}\r\n\r\nselect:focus {\r\n    background-image: url(\"data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233498db'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e\");\r\n}\r\n\r\n/* Remove the old course-display styles if no longer needed */\r\n\r\n
+===================================================================
+diff --git a/src/main/webapp/Course/css/register.css b/src/main/webapp/Course/css/register.css
+--- a/src/main/webapp/Course/css/register.css	(revision 1dfa72aad677d87d233278b8ba9dd5c4d4251624)
++++ b/src/main/webapp/Course/css/register.css	(date 1747379609146)
+@@ -1,80 +1,84 @@
+-/* Base Styles */
+-:root {
+-    --primary-color: #2c3e50;
+-    --secondary-color: #3498db;
+-    --accent-color: #e74c3c;
+-    --light-gray: #f5f5f5;
+-    --medium-gray: #e0e0e0;
+-    --dark-gray: #333;
+-    --success-color: #27ae60;
+-}
+-
+-body {
+-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+-    background-color: var(--light-gray);
+-    color: var(--dark-gray);
+-    line-height: 1.6;
++/* Reset and Base Styles */
++* {
+     margin: 0;
+     padding: 0;
++    box-sizing: border-box;
++    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
++}
++
++body {
++    background-color: #f5f7fa;
++    color: #333;
++    line-height: 1.6;
++    padding: 20px;
+ }
+ 
+ /* Registration Container */
+ .registration-container {
+     max-width: 800px;
+-    margin: 2rem auto;
+-    background: white;
++    margin: 30px auto;
++    background: #fff;
+     border-radius: 10px;
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+     overflow: hidden;
++    padding: 30px;
+ }
+ 
++/* Header Styles */
+ .registration-header {
+-    background-color: var(--primary-color);
+-    color: white;
+-    padding: 2rem;
+     text-align: center;
++    margin-bottom: 30px;
++    padding-bottom: 20px;
++    border-bottom: 1px solid #eaeaea;
+ }
+ 
+ .registration-header h1 {
+-    margin: 0;
+-    font-size: 2rem;
++    color: #2c3e50;
++    font-size: 28px;
++    margin-bottom: 10px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+-    gap: 0.5rem;
++    gap: 10px;
+ }
+ 
+ .registration-header p {
+-    margin: 0.5rem 0 0;
+-    opacity: 0.9;
++    color: #7f8c8d;
++    font-size: 16px;
+ }
+ 
+ /* Form Styles */
+ .registration-form {
+-    padding: 2rem;
++    display: flex;
++    flex-direction: column;
++    gap: 0.001px;
+ }
+ 
+ fieldset {
+-    border: 1px solid var(--medium-gray);
++    border: 1px solid #eaeaea;
+     border-radius: 8px;
+-    padding: 1.5rem;
+-    margin-bottom: 1.5rem;
++    padding: 25px;
++    background: #f9f9f9;
+ }
+ 
+ legend {
+-    padding: 0 0.5rem;
++    padding: 0 10px;
+     font-weight: 600;
+-    color: var(--primary-color);
+-    font-size: 1.1rem;
++    color: #2c3e50;
++    font-size: 18px;
++    display: flex;
++    align-items: center;
++    gap: 10px;
+ }
+ 
++/* Form Group Styles */
+ .form-group {
+-    margin-bottom: 1.2rem;
++    margin-bottom: 20px;
+ }
+ 
+ .form-row {
+     display: flex;
+-    gap: 1rem;
++    gap: 20px;
+ }
+ 
+ .form-row .form-group {
+@@ -83,130 +87,128 @@
+ 
+ label {
+     display: block;
+-    margin-bottom: 0.5rem;
++    margin-bottom: 8px;
+     font-weight: 500;
++    color: #2c3e50;
+ }
+ 
+ input[type="text"],
+ input[type="email"],
+ input[type="tel"],
+ input[type="date"],
+-select,
+-textarea {
++select {
+     width: 100%;
+-    padding: 0.8rem;
+-    border: 1px solid var(--medium-gray);
+-    border-radius: 4px;
+-    font-size: 1rem;
+-    transition: border-color 0.3s;
++    padding: 12px 15px;
++    border: 1px solid #ddd;
++    border-radius: 6px;
++    font-size: 16px;
++    transition: all 0.3s;
++    background-color: #fff;
+ }
+ 
+-input:focus,
+-select:focus,
+-textarea:focus {
++input[type="text"]:focus,
++input[type="email"]:focus,
++input[type="tel"]:focus,
++input[type="date"]:focus,
++select:focus {
++    border-color: #3498db;
++    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+     outline: none;
+-    border-color: var(--secondary-color);
+-    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+-}
+-
+-textarea {
+-    resize: vertical;
+-    min-height: 80px;
+-}
+-
+-/* Course Display */
+-.course-display {
+-    padding: 0.8rem;
+-    background-color: var(--light-gray);
+-    border-radius: 4px;
+-    border: 1px dashed var(--medium-gray);
+-    font-weight: 500;
+ }
+ 
+ /* Checkbox Styles */
+ .checkbox-group {
+     display: flex;
+     align-items: center;
+-    gap: 0.5rem;
++    gap: 10px;
++    margin-top: 15px;
+ }
+ 
+ .checkbox-group input[type="checkbox"] {
+     width: auto;
++    transform: scale(1.2);
+ }
+ 
+ .terms-group {
+-    margin: 1.5rem 0;
+-}
+-
+-.terms-group a {
+-    color: var(--secondary-color);
+-    text-decoration: none;
++    margin: 20px 0;
++    padding: 15px;
++    background: #f0f7ff;
++    border-radius: 6px;
+ }
+ 
+-.terms-group a:hover {
+-    text-decoration: underline;
++.terms-group label {
++    margin-bottom: 0;
+ }
+ 
+ /* Button Styles */
+ .form-actions {
+     display: flex;
+-    gap: 1rem;
+     justify-content: flex-end;
++    gap: 15px;
++    margin-top: 20px;
+ }
+ 
+-.submit-btn {
+-    background-color: var(--secondary-color);
+-    color: white;
+-    border: none;
+-    padding: 0.8rem 1.5rem;
+-    border-radius: 4px;
+-    font-size: 1rem;
++.submit-btn, .cancel-btn {
++    padding: 12px 25px;
++    border-radius: 6px;
++    font-size: 16px;
+     font-weight: 500;
+     cursor: pointer;
++    transition: all 0.3s;
+     display: flex;
+     align-items: center;
+-    gap: 0.5rem;
+-    transition: background-color 0.3s;
++    gap: 8px;
++}
++
++.submit-btn {
++    background-color: #3498db;
++    color: white;
++    border: none;
+ }
+ 
+ .submit-btn:hover {
+     background-color: #2980b9;
++    transform: translateY(-2px);
+ }
+ 
+ .cancel-btn {
+-    background-color: white;
+-    color: var(--dark-gray);
+-    border: 1px solid var(--medium-gray);
+-    padding: 0.8rem 1.5rem;
+-    border-radius: 4px;
+-    font-size: 1rem;
+-    font-weight: 500;
+-    cursor: pointer;
+-    display: flex;
+-    align-items: center;
+-    gap: 0.5rem;
++    background-color: #fff;
++    color: #e74c3c;
++    border: 1px solid #e74c3c;
+     text-decoration: none;
+-    transition: all 0.3s;
+ }
+ 
+ .cancel-btn:hover {
+-    background-color: var(--light-gray);
++    background-color: #fdf2f2;
++    transform: translateY(-2px);
+ }
+ 
+-/* Error Handling */
++/* Error Styles */
+ .error-message {
+-    color: var(--accent-color);
+-    font-size: 0.8rem;
+-    margin-top: 0.3rem;
++    color: #e74c3c;
++    font-size: 14px;
++    margin-top: 5px;
+     display: block;
+-    min-height: 1rem;
++    min-height: 18px;
++}
++
++.error-input {
++    border-color: #e74c3c !important;
+ }
+ 
+-input:invalid, select:invalid {
+-    border-color: #ffdddd;
++.error-alert {
++    background-color: #fdecea;
++    color: #e74c3c;
++    padding: 15px;
++    border-radius: 6px;
++    margin-bottom: 20px;
++    display: flex;
++    align-items: center;
++    gap: 10px;
++    border-left: 4px solid #e74c3c;
+ }
+ 
+-/* Success Modal */
++/* Success Modal Styles */
+ .modal {
+     display: none;
+     position: fixed;
+@@ -216,34 +218,57 @@
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.5);
+-    animation: fadeIn 0.3s;
++    overflow: auto;
+ }
+ 
+ .modal-content {
+-    background-color: white;
++    background-color: #fff;
+     margin: 10% auto;
+-    padding: 2rem;
+-    border-radius: 8px;
++    padding: 30px;
++    border-radius: 10px;
+     max-width: 500px;
++    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+     text-align: center;
+-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
++    position: relative;
++    animation: modalopen 0.4s;
++}
++
++@keyframes modalopen {
++    from {opacity: 0; transform: translateY(-50px);}
++    to {opacity: 1; transform: translateY(0);}
+ }
+ 
+ .success-icon {
+-    color: var(--success-color);
+-    font-size: 3rem;
+-    margin-bottom: 1rem;
++    color: #2ecc71;
++    font-size: 50px;
++    margin-bottom: 20px;
++}
++
++.modal-content h2 {
++    color: #2c3e50;
++    margin-bottom: 15px;
++}
++
++.modal-content p {
++    margin-bottom: 10px;
++    color: #555;
+ }
+ 
+ .modal-close-btn {
+-    background-color: var(--secondary-color);
++    background-color: #2ecc71;
+     color: white;
+     border: none;
+-    padding: 0.8rem 1.5rem;
+-    border-radius: 4px;
+-    font-size: 1rem;
++    padding: 12px 25px;
++    border-radius: 6px;
++    font-size: 16px;
++    margin-top: 20px;
+     cursor: pointer;
+-    margin-top: 1rem;
++    transition: all 0.3s;
++}
++
++.modal-close-btn:hover {
++    background-color: #27ae60;
++    transform: translateY(-2px);
+ }
+ 
+ /* Responsive Design */
+@@ -254,35 +279,23 @@
+     }
+ 
+     .registration-container {
+-        margin: 0;
+-        border-radius: 0;
++        padding: 20px;
++        margin: 15px;
+     }
+ 
+     .modal-content {
+-        margin: 20% auto;
+-        width: 90%;
++        margin: 20% 15px;
++        width: auto;
+     }
+ }
+ 
+-@keyframes fadeIn {
+-    from { opacity: 0; }
+-    to { opacity: 1; }
+-}
+-/* Add to your existing CSS */
+-select {
+-    appearance: none;
+-    -webkit-appearance: none;
+-    -moz-appearance: none;
+-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23333'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+-    background-repeat: no-repeat;
+-    background-position: right 0.8rem center;
+-    background-size: 1rem;
+-    padding-right: 2.5rem;
+-}
++@media (max-width: 480px) {
++    .form-actions {
++        flex-direction: column;
++    }
+ 
+-select:focus {
+-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233498db'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+-}
+-
+-/* Remove the old course-display styles if no longer needed */
+-
++    .submit-btn, .cancel-btn {
++        width: 100%;
++        justify-content: center;
++    }
++}
+\ No newline at end of file
+Index: src/main/webapp/WEB-INF/web.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE web-app PUBLIC\r\n \"-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN\"\r\n \"http://java.sun.com/dtd/web-app_2_3.dtd\" >\r\n\r\n<web-app>\r\n  <display-name>Archetype Created Web Application</display-name>\r\n</web-app>\r\n
+===================================================================
+diff --git a/src/main/webapp/WEB-INF/web.xml b/src/main/webapp/WEB-INF/web.xml
+--- a/src/main/webapp/WEB-INF/web.xml	(revision 1dfa72aad677d87d233278b8ba9dd5c4d4251624)
++++ b/src/main/webapp/WEB-INF/web.xml	(date 1747341025125)
+@@ -1,7 +1,8 @@
+-<!DOCTYPE web-app PUBLIC
+- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+-
+-<web-app>
+-  <display-name>Archetype Created Web Application</display-name>
++<?xml version="1.0" encoding="UTF-8"?>
++<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
++         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
++                             http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
++         version="4.0">
++  <display-name>Driving School System</display-name>
+ </web-app>
+Index: src/main/webapp/Course/page/register.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%@ page language=\"java\" contentType=\"text/html; charset=UTF-8\" pageEncoding=\"UTF-8\"%>\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>Register | DRIVE EASY SCHOOL</title>\r\n    <link rel=\"stylesheet\" href=\"../css/register.css\">\r\n    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css\">\r\n</head>\r\n<body>\r\n<div class=\"registration-container\">\r\n    <div class=\"registration-header\">\r\n        <h1><i class=\"fas fa-car\"></i> Course Registration</h1>\r\n        <p>Please fill out this form to register for your selected course</p>\r\n    </div>\r\n\r\n    <form id=\"registrationForm\" class=\"registration-form\" action=\"../processRegistration\" method=\"POST\">\r\n        <!-- Personal Information Section -->\r\n        <fieldset>\r\n            <legend><i class=\"fas fa-user\"></i> Personal Information</legend>\r\n\r\n            <div class=\"form-group\">\r\n                <label for=\"fullName\">Full Name*</label>\r\n                <input type=\"text\" id=\"fullName\" name=\"fullName\" required>\r\n                <span class=\"error-message\"></span>\r\n            </div>\r\n\r\n            <div class=\"form-row\">\r\n                <div class=\"form-group\">\r\n                    <label for=\"email\">Email*</label>\r\n                    <input type=\"email\" id=\"email\" name=\"email\" required>\r\n                    <span class=\"error-message\"></span>\r\n                </div>\r\n\r\n                <div class=\"form-group\">\r\n                    <label for=\"phone\">Phone*</label>\r\n                    <input type=\"tel\" id=\"phone\" name=\"phone\" required>\r\n                    <span class=\"error-message\"></span>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"form-row\">\r\n                <div class=\"form-group\">\r\n                    <label for=\"dob\">Date of Birth*</label>\r\n                    <input type=\"date\" id=\"dob\" name=\"dob\" required>\r\n                    <span class=\"error-message\"></span>\r\n                </div>\r\n\r\n                <div class=\"form-group\">\r\n                    <label for=\"gender\">Gender</label>\r\n                    <select id=\"gender\" name=\"gender\">\r\n                        <option value=\"\">Select</option>\r\n                        <option value=\"male\">Male</option>\r\n                        <option value=\"female\">Female</option>\r\n                        <option value=\"other\">Other</option>\r\n                        <option value=\"prefer-not-to-say\">Prefer not to say</option>\r\n                    </select>\r\n                </div>\r\n            </div>\r\n        </fieldset>\r\n\r\n        <!-- Course Information Section -->\r\n        <fieldset>\r\n            <legend><i class=\"fas fa-book\"></i> Course Information</legend>\r\n\r\n            <div class=\"form-group\">\r\n                <label for=\"courseSelect\">Select Course*</label>\r\n                <select id=\"courseSelect\" name=\"courseType\" required>\r\n                    <option value=\"\">-- Select a course --</option>\r\n                    <option value=\"beginner\" <%= \"beginner\".equals(request.getParameter(\"course\")) ? \"selected\" : \"\" %>>Beginner's Course</option>\r\n                    <option value=\"intermediate\" <%= \"intermediate\".equals(request.getParameter(\"course\")) ? \"selected\" : \"\" %>>Intermediate Course</option>\r\n                    <option value=\"advanced\" <%= \"advanced\".equals(request.getParameter(\"course\")) ? \"selected\" : \"\" %>>Advanced Driving Course</option>\r\n                    <option value=\"defensive\" <%= \"defensive\".equals(request.getParameter(\"course\")) ? \"selected\" : \"\" %>>Defensive Driving Course</option>\r\n                </select>\r\n                <span class=\"error-message\"></span>\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n                <label for=\"experience\">Driving Experience*</label>\r\n                <select id=\"experience\" name=\"experience\" required>\r\n                    <option value=\"\">Select your experience level</option>\r\n                    <option value=\"none\">No experience</option>\r\n                    <option value=\"some\">Some experience (no license)</option>\r\n                    <option value=\"licensed\">Licensed driver (refresher course)</option>\r\n                </select>\r\n            </div>\r\n\r\n            <div class=\"form-group checkbox-group\">\r\n                <input type=\"checkbox\" id=\"hasPermit\" name=\"hasPermit\">\r\n                <label for=\"hasPermit\">I already have a learner's permit</label>\r\n            </div>\r\n        </fieldset>\r\n\r\n        <!-- Terms and Submission -->\r\n        <div class=\"form-group checkbox-group terms-group\">\r\n            <input type=\"checkbox\" id=\"agreeTerms\" name=\"agreeTerms\" required>\r\n            <label for=\"agreeTerms\">I agree to the <a href=\"/terms\" target=\"_blank\">terms and conditions</a>*</label>\r\n            <span class=\"error-message\"></span>\r\n        </div>\r\n\r\n        <div class=\"form-actions\">\r\n            <button type=\"submit\" class=\"submit-btn\">\r\n                <i class=\"fas fa-paper-plane\"></i> Submit Application\r\n            </button>\r\n            <a href=\"/courses\" class=\"cancel-btn\">\r\n                <i class=\"fas fa-times\"></i> Cancel\r\n            </a>\r\n        </div>\r\n    </form>\r\n</div>\r\n\r\n<!-- Success Modal -->\r\n<div id=\"successModal\" class=\"modal\">\r\n    <div class=\"modal-content\">\r\n        <div class=\"success-icon\">\r\n            <i class=\"fas fa-check-circle\"></i>\r\n        </div>\r\n        <h2>Registration Successful!</h2>\r\n        <p>Thank you for registering with Drive Easy School.</p>\r\n        <p>We'll contact you within 24 hours to confirm your enrollment.</p>\r\n        <button id=\"closeSuccessModal\" class=\"modal-close-btn\">Continue</button>\r\n    </div>\r\n</div>\r\n\r\n<script src=\"../js/register.js\"></script>\r\n</body>\r\n</html>
+===================================================================
+diff --git a/src/main/webapp/Course/page/register.jsp b/src/main/webapp/Course/page/register.jsp
+--- a/src/main/webapp/Course/page/register.jsp	(revision 1dfa72aad677d87d233278b8ba9dd5c4d4251624)
++++ b/src/main/webapp/Course/page/register.jsp	(date 1747379351209)
+@@ -5,8 +5,8 @@
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Register | DRIVE EASY SCHOOL</title>
+-    <link rel="stylesheet" href="../css/register.css">
+-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
++    <link rel="stylesheet" href="../../Course/css/register.css">
++    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ </head>
+ <body>
+ <div class="registration-container">
+@@ -15,27 +15,40 @@
+         <p>Please fill out this form to register for your selected course</p>
+     </div>
+ 
+-    <form id="registrationForm" class="registration-form" action="../processRegistration" method="POST">
++    <%-- Display error message if present --%>
++    <% if (request.getAttribute("errorMessage") != null) { %>
++    <div class="error-alert">
++        <i class="fas fa-exclamation-circle"></i>
++        ${errorMessage}
++    </div>
++    <% } %>
++
++    <form id="registrationForm" class="registration-form" action="${pageContext.request.contextPath}/processRegistration" method="POST">
+         <!-- Personal Information Section -->
+         <fieldset>
+             <legend><i class="fas fa-user"></i> Personal Information</legend>
+ 
+             <div class="form-group">
+                 <label for="fullName">Full Name*</label>
+-                <input type="text" id="fullName" name="fullName" required>
++                <input type="text" id="fullName" name="fullName"
++                       value="${not empty param.fullName ? param.fullName : (not empty fullName ? fullName : '')}"
++                       required pattern="[A-Za-z ]{3,50}" title="Name should be 3-50 alphabetic characters">
+                 <span class="error-message"></span>
+             </div>
+ 
+             <div class="form-row">
+                 <div class="form-group">
+                     <label for="email">Email*</label>
+-                    <input type="email" id="email" name="email" required>
++                    <input type="email" id="email" name="email"
++                           value="${not empty param.email ? param.email : (not empty email ? email : '')}" required>
+                     <span class="error-message"></span>
+                 </div>
+ 
+                 <div class="form-group">
+                     <label for="phone">Phone*</label>
+-                    <input type="tel" id="phone" name="phone" required>
++                    <input type="tel" id="phone" name="phone"
++                           value="${not empty param.phone ? param.phone : (not empty phone ? phone : '')}"
++                           required pattern="[0-9]{10,15}" title="Phone number should be 10-15 digits">
+                     <span class="error-message"></span>
+                 </div>
+             </div>
+@@ -43,7 +56,8 @@
+             <div class="form-row">
+                 <div class="form-group">
+                     <label for="dob">Date of Birth*</label>
+-                    <input type="date" id="dob" name="dob" required>
++                    <input type="date" id="dob" name="dob"
++                           value="${not empty param.dob ? param.dob : (not empty dob ? dob : '')}" required>
+                     <span class="error-message"></span>
+                 </div>
+ 
+@@ -51,10 +65,10 @@
+                     <label for="gender">Gender</label>
+                     <select id="gender" name="gender">
+                         <option value="">Select</option>
+-                        <option value="male">Male</option>
+-                        <option value="female">Female</option>
+-                        <option value="other">Other</option>
+-                        <option value="prefer-not-to-say">Prefer not to say</option>
++                        <option value="male" ${(param.gender == 'male' || gender == 'male') ? 'selected' : ''}>Male</option>
++                        <option value="female" ${(param.gender == 'female' || gender == 'female') ? 'selected' : ''}>Female</option>
++                        <option value="other" ${(param.gender == 'other' || gender == 'other') ? 'selected' : ''}>Other</option>
++                        <option value="prefer-not-to-say" ${(param.gender == 'prefer-not-to-say' || gender == 'prefer-not-to-say') ? 'selected' : ''}>Prefer not to say</option>
+                     </select>
+                 </div>
+             </div>
+@@ -68,10 +82,10 @@
+                 <label for="courseSelect">Select Course*</label>
+                 <select id="courseSelect" name="courseType" required>
+                     <option value="">-- Select a course --</option>
+-                    <option value="beginner" <%= "beginner".equals(request.getParameter("course")) ? "selected" : "" %>>Beginner's Course</option>
+-                    <option value="intermediate" <%= "intermediate".equals(request.getParameter("course")) ? "selected" : "" %>>Intermediate Course</option>
+-                    <option value="advanced" <%= "advanced".equals(request.getParameter("course")) ? "selected" : "" %>>Advanced Driving Course</option>
+-                    <option value="defensive" <%= "defensive".equals(request.getParameter("course")) ? "selected" : "" %>>Defensive Driving Course</option>
++                    <option value="beginner" ${(param.courseType == 'beginner' || courseType == 'beginner') ? 'selected' : ''}>Beginner's Course</option>
++                    <option value="intermediate" ${(param.courseType == 'intermediate' || courseType == 'intermediate') ? 'selected' : ''}>Intermediate Course</option>
++                    <option value="advanced" ${(param.courseType == 'advanced' || courseType == 'advanced') ? 'selected' : ''}>Advanced Driving Course</option>
++                    <option value="defensive" ${(param.courseType == 'defensive' || courseType == 'defensive') ? 'selected' : ''}>Defensive Driving Course</option>
+                 </select>
+                 <span class="error-message"></span>
+             </div>
+@@ -80,22 +94,24 @@
+                 <label for="experience">Driving Experience*</label>
+                 <select id="experience" name="experience" required>
+                     <option value="">Select your experience level</option>
+-                    <option value="none">No experience</option>
+-                    <option value="some">Some experience (no license)</option>
+-                    <option value="licensed">Licensed driver (refresher course)</option>
++                    <option value="none" ${(param.experience == 'none' || experience == 'none') ? 'selected' : ''}>No experience</option>
++                    <option value="some" ${(param.experience == 'some' || experience == 'some') ? 'selected' : ''}>Some experience (no license)</option>
++                    <option value="licensed" ${(param.experience == 'licensed' || experience == 'licensed') ? 'selected' : ''}>Licensed driver (refresher course)</option>
+                 </select>
+             </div>
+ 
+             <div class="form-group checkbox-group">
+-                <input type="checkbox" id="hasPermit" name="hasPermit">
++                <input type="checkbox" id="hasPermit" name="hasPermit"
++                ${(param.hasPermit == 'on' || hasPermit == 'on') ? 'checked' : ''}>
+                 <label for="hasPermit">I already have a learner's permit</label>
+             </div>
+         </fieldset>
+ 
+         <!-- Terms and Submission -->
+         <div class="form-group checkbox-group terms-group">
+-            <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+-            <label for="agreeTerms">I agree to the <a href="/terms" target="_blank">terms and conditions</a>*</label>
++            <input type="checkbox" id="agreeTerms" name="agreeTerms" required
++            ${(param.agreeTerms == 'on' || agreeTerms == 'on') ? 'checked' : ''}>
++            <label for="agreeTerms">I agree to the <a href="${pageContext.request.contextPath}/terms" target="_blank">terms and conditions</a>*</label>
+             <span class="error-message"></span>
+         </div>
+ 
+@@ -103,7 +119,7 @@
+             <button type="submit" class="submit-btn">
+                 <i class="fas fa-paper-plane"></i> Submit Application
+             </button>
+-            <a href="/courses" class="cancel-btn">
++            <a href="${pageContext.request.contextPath}/courses" class="cancel-btn">
+                 <i class="fas fa-times"></i> Cancel
+             </a>
+         </div>
+@@ -111,18 +127,84 @@
+ </div>
+ 
+ <!-- Success Modal -->
+-<div id="successModal" class="modal">
++<div id="successModal" class="modal" style="display: ${success != null ? 'block' : 'none'};">
+     <div class="modal-content">
+         <div class="success-icon">
+             <i class="fas fa-check-circle"></i>
+         </div>
+         <h2>Registration Successful!</h2>
+-        <p>Thank you for registering with Drive Easy School.</p>
++        <p>Thank you ${not empty fullName ? fullName : ''} for registering with Drive Easy School.</p>
++        <p>Your registration for <strong>${not empty courseTypeDisplay ? courseTypeDisplay : 'the course'}</strong> has been received.</p>
+         <p>We'll contact you within 24 hours to confirm your enrollment.</p>
+         <button id="closeSuccessModal" class="modal-close-btn">Continue</button>
+     </div>
+ </div>
+ 
+-<script src="../js/register.js"></script>
++<script>
++    $(document).ready(function() {
++        // Set max date for date of birth (minimum age 16)
++        const today = new Date();
++        const maxDobDate = new Date(today.getFullYear() - 16, today.getMonth(), today.getDate());
++        document.getElementById('dob').max = maxDobDate.toISOString().split('T')[0];
++
++        // Close modal handlers
++        $('#closeSuccessModal').click(function() {
++            $('#successModal').hide();
++            window.location.href = '${pageContext.request.contextPath}/courses';
++        });
++
++        window.onclick = function(event) {
++            if (event.target == document.getElementById('successModal')) {
++                $('#successModal').hide();
++                window.location.href = '${pageContext.request.contextPath}/courses';
++            }
++        };
++
++        // Client-side validation
++        $('#registrationForm').submit(function(e) {
++            let isValid = true;
++
++            // Clear previous errors
++            $('.error-message').text('');
++            $('input, select').removeClass('error-input');
++
++            // Validate required fields
++            $('[required]').each(function() {
++                if (!$(this).val()) {
++                    $(this).addClass('error-input');
++                    $(this).next('.error-message').text('This field is required');
++                    isValid = false;
++                }
++            });
++
++            // Validate email format
++            const email = $('#email').val();
++            if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
++                $('#email').addClass('error-input');
++                $('#email').next('.error-message').text('Please enter a valid email');
++                isValid = false;
++            }
++
++            // Validate phone format
++            const phone = $('#phone').val();
++            if (phone && !/^[0-9]{10,15}$/.test(phone)) {
++                $('#phone').addClass('error-input');
++                $('#phone').next('.error-message').text('Phone should be 10-15 digits');
++                isValid = false;
++            }
++
++            if (!isValid) {
++                e.preventDefault();
++                $('.error-alert').remove();
++                $('.registration-header').after(
++                    '<div class="error-alert"><i class="fas fa-exclamation-circle"></i> Please correct the errors in the form.</div>'
++                );
++                $('html, body').animate({
++                    scrollTop: $('.error-alert').offset().top - 20
++                }, 500);
++            }
++        });
++    });
++</script>
+ </body>
+ </html>
+\ No newline at end of file
